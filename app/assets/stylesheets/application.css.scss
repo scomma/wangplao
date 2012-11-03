@@ -20,14 +20,70 @@ $colorMid: #FFFBE0;
 $colorLow: #5EF2DF;
 $colorMin: #8DCCAE;
 
+// bootstrap + customisations
 $navbarBackground: $colorMin;
 $navbarBackgroundHighlight: $colorLow;
 $navbarBrandColor: black;
 
+$baseFontFamily: 'Helvetica';
+
+$padSize: 12px;
+$borderSize: 6px;
+
 @import 'twitter/bootstrap';
 @import 'twitter/bootstrap-responsive';
 
+// mixins
+// REF: https://raw.github.com/gist/1319313/7337c10893c1223b2c9ea8d3d954320100b249b1/_gradients.css.scss
+@mixin gradient($from, $to) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to);
+
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to);
+
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to);
+}
+
+
 body {
   padding: 70px 0 0 0;
+}
+
+.input-block {
+  border-radius: $padSize;
+  background-color: $colorMid;
+  border: solid $borderSize $colorMin;
+  vertical-align: middle;
+  margin-bottom: $borderSize * 2;
+  box-shadow: 0 9px 6px -6px grey;
+
+  legend {
+    background-color: $colorMin;
+    color: white;
+    text-shadow: white;
+    text-indent: $padSize;
+    margin-bottom: -1px; /* override bootstrap's */
+  }
+
+  .calendar {
+    padding: $padSize - $borderSize;
+    box-shadow: inset 0 0 3px grey;
+
+    table {
+      width: '100%';
+    }
+  }
+
+  .sideform {
+    padding: $padSize - $borderSize;
+  }
 }
 

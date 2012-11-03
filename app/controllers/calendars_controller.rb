@@ -10,5 +10,7 @@ class CalendarsController < ApplicationController
   end
 
   def create
+    @calendar = Calendar.create!(params[:calendar])
+    redirect_to @calendar
   end
 end

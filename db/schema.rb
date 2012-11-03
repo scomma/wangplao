@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103171728) do
+ActiveRecord::Schema.define(:version => 20121103172129) do
+
+  create_table "availabilities", :force => true do |t|
+    t.integer  "participant_id"
+    t.date     "on"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "availabilities", ["participant_id"], :name => "index_availabilities_on_participant_id"
 
   create_table "calendars", :force => true do |t|
     t.string   "title"

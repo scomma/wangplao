@@ -16,6 +16,11 @@
 #= require_tree .
 
 $ ->
-  $('.datepicker').datepicker()
+  $('.datepicker').each ->
+    me = $(this)
+    me.datepicker
+      altField: "##{me.attr 'data-target'}"
 
+    $("##{me.attr 'data-target'}").change ->
+      alert $(this).val()
 

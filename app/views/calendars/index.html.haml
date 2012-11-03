@@ -1,19 +1,21 @@
-= form_for(Calendar.new, :html => { :class => 'form-horizontal' }) do |f|
+= form_for Calendar.new do |f|
   %fieldset
-    %legend Create a calendar
-    .control-group
-      = f.label :title, :class => 'control-label'
-      .controls
-        = f.text_field :title, :class => 'input-xlarge'
-    .control-group
-      = f.label :description, :class => 'control-label'
-      .controls
-        = f.text_area :description, :rows => 3
-    .control-group
-      = f.label 'Duration of Event', :class => 'control-label'
-      .controls
-        = f.text_field :range_start, :class => 'datepicker'
-        %span to
-        = f.text_field :range_end, :class => 'datepicker'
-    .form-actions
-      = f.submit 'Create!', :class => 'btn btn-large btn-primary'
+    .row
+      .span4
+        .input-block
+          %legend Starting date
+          .calendar
+            .datepicker{ :"data-target" => 'calendar_range_start' }
+            = f.hidden_field :range_start
+      .span4
+        .input-block
+          %legend Ending date
+          .calendar
+            .datepicker{ :"data-target" => 'calendar_range_end' }
+            = f.hidden_field :range_end
+      .span4
+        .input-block
+          %legend Give it a title!
+          .sideform
+            = f.text_field :title, :placeholder => 'Give it a title', :class => 'input-large'
+            = f.submit 'Create Calendar!', :class => 'btn btn-medium btn-primary'

@@ -27,7 +27,7 @@ $navbarBrandColor: black;
 
 $baseFontFamily: 'Helvetica';
 
-$padSize: 12px;
+$padSize: 10px;
 $borderSize: 6px;
 
 @import 'twitter/bootstrap';
@@ -60,13 +60,13 @@ body {
 .input-block {
   border-radius: $padSize;
   background-color: $colorMid;
-  border: solid $borderSize $colorMin;
+  border: solid $borderSize $colorHi;
   vertical-align: middle;
   margin-bottom: $borderSize * 2;
   box-shadow: 0 9px 6px -6px grey;
 
   legend {
-    background-color: $colorMin;
+    background-color: $colorHi;
     color: white;
     text-shadow: white;
     text-indent: $padSize;
@@ -74,7 +74,7 @@ body {
   }
 
   .calendar {
-    padding: $padSize - $borderSize;
+    padding: $padSize;
     box-shadow: inset 0 0 3px grey;
 
     table {
@@ -83,7 +83,7 @@ body {
   }
 
   .sideform {
-    padding: $padSize - $borderSize;
+    padding: $padSize;
   }
 }
 

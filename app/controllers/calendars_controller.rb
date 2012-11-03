@@ -7,6 +7,7 @@ class CalendarsController < ApplicationController
   end
 
   def show
+    # @calendar = Calendar.find_by_token!(params[:id])
   end
 
   def create

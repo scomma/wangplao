@@ -1,1 +1,22 @@
 %h1 Calendars#show
+%h2.title= @calendar.title
+%p.description= @calendar.description
+
+= form_for [@calendar, Participant.new] do |f|
+  = calendar_for(@calendar.availabilities) do |cal|
+    = cal.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+    - cal.day(:day_method => :on) do |date, availabilities|
+      - if @calendar.range_start <= date && date <= @calendar.range_end
+        = check_box_tag 'participant[availabilities_attributes][][on]', date
+      - availabilities.each do |av|
+        = av.participant
+      = date.day
+  = f.label :name, "Your name"
+  = f.text_field :name
+  = f.submit "Add"
+
+.share
+  = link_to "Share", "https://www.facebook.com/sharer/sharer.php?u=#{u(request.protocol)}#{u(request.host_with_port)}#{u(request.fullpath)}"
+.tweet
+  = link_to "Tweet", "https://twitter.com/share", class: "twitter-share-button", data: { via: "wangplao", text: "#{@calendar.title}", url: "#{request.protocol}#{request.host_with_port}#{request.fullpath}" }
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

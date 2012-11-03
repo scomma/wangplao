@@ -1,7 +1,21 @@
-%h1 Calendars#index
-= calendar_for(@availabilities) do |cal|
-  = cal.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
-  - cal.day(:day_method => :on) do |day, availabilities|
-    - availabilities.each do |av|
-      = 'x'
-      = av.participant.to_s
+%h1 Easy way to Schedule with Friends!
+= form_for(Calendar.new, :html => { :class => 'form-horizontal' }) do |f|
+  %fieldset
+    %legend Create a calendar
+    .control-group
+      = f.label :title, :class => 'control-label'
+      .controls
+        = f.text_field :title, :class => 'input-xlarge'
+    .control-group
+      = f.label :description, :class => 'control-label'
+      .controls
+        = f.text_area :description, :rows => 3
+    .control-group
+      = f.label 'Duration of Event', :class => 'control-label'
+      .controls
+        = f.text_field :range_start, :class => 'datepicker'
+        %span to
+        = f.text_field :range_end, :class => 'datepicker'
+    .form-actions
+      = f.submit 'Create!', :class => 'btn btn-large btn-primary'
+

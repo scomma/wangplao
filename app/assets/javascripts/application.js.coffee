@@ -15,7 +15,7 @@
 #= require jquery_ujs
 #= require_tree .
 
-do ->
-  $('.datepicker').datepicker
+$ ->
+  $('.datepicker').datepicker()
 
 

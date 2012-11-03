@@ -7,10 +7,11 @@ class CalendarsController < ApplicationController
   end
 
   def show
-    @title = "title"
-    @description = "description"
+    @calendar = Calendar.find_by_token!(params[:id])
   end
 
   def create
+    @calendar = Calendar.create!(params[:calendar])
+    redirect_to @calendar
   end
 end

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/ches/table_builder.git
+  revision: ae1cbbec69c6b62089b0044796594bd34ec994ab
+  branch: scopes_fix
+  specs:
+    table_builder (0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -176,7 +183,6 @@ GEM
       activerecord (~> 3.0)
       activesupport (~> 3.0)
       polyamorous (~> 0.5.0)
-    table_builder (0.2.3)
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -222,6 +228,6 @@ DEPENDENCIES
   shoulda-matchers
   simplecov
   squeel
-  table_builder
+  table_builder!
   thin
   uglifier (>= 1.0.3)

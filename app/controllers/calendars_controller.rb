@@ -5,4 +5,10 @@ class CalendarsController < ApplicationController
       Availability.new :on => date
     end
   end
+
+  def show
+  end
+
+  def create
+  end
 end

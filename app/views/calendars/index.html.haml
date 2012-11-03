@@ -1,2 +1,4 @@
 %h1 Calendars#index
-%p Find me in app/views/calendars/index.html.haml
+%ul
+  - @availabilities.each do |av|
+    %li= av.on.to_s

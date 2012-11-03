@@ -8,6 +8,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'hashie'
 gem 'squeel'
+gem 'table_builder'
 
 group :development do
   gem 'quiet_assets'

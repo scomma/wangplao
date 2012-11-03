@@ -1,5 +1,5 @@
 Wangplao::Application.routes.draw do
-  resources :calendar, path: '' do
+  resources :calendars, path: '' do
     resources :participants
   end
 end

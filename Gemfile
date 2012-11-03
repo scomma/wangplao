@@ -8,7 +8,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'hashie'
 gem 'squeel'
-gem 'table_builder'
+gem 'table_builder', :git => 'git://github.com/ches/table_builder.git', :branch => 'scopes_fix'
 
 group :development do
   gem 'quiet_assets'

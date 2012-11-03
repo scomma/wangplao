@@ -1,2 +1,7 @@
 %h1 Calendars#index
-%p Find me in app/views/calendars/index.html.haml
+= calendar_for(@availabilities) do |cal|
+  = cal.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+  - cal.day(:day_method => :on) do |day, availabilities|
+    - availabilities.each do |av|
+      = 'x'
+      = av.participant.to_s

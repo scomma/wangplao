@@ -13,10 +13,21 @@
  *= require_tree .
  */
 
+// http://www.colourlovers.com/palette/1912696/too_fast
+$colorMax: #FF3F19;
+$colorHi: #FF7857;
+$colorMid: #FFFBE0;
+$colorLow: #5EF2DF;
+$colorMin: #8DCCAE;
+
+$navbarBackground: $colorMin;
+$navbarBackgroundHighlight: $colorLow;
+$navbarBrandColor: black;
+
 @import 'twitter/bootstrap';
 @import 'twitter/bootstrap-responsive';
 
 body {
-  padding: 40px 0 0 0;
+  padding: 70px 0 0 0;
 }
 

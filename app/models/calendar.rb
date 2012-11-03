@@ -18,6 +18,6 @@ class Calendar < ActiveRecord::Base
 
 private
   def generate_token
-    self.token = SecureRandom.hex
+    self.token = SecureRandom.hex(3)
   end
 end

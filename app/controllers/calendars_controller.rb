@@ -7,6 +7,8 @@ class CalendarsController < ApplicationController
   end
 
   def show
+    @title = "title"
+    @description = "description"
   end
 
   def create
